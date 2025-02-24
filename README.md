@@ -1,5 +1,6 @@
 # Java-Ai-feedforward-neural-netwok
 Feedforward neural netwok coded in a java class. It admit manual definition of the quantity of layers and  its nodes.
+Instructioos System.out.print(); are include to observe the values wich the app works with. 
 It has a purely pedagogical objective.
 Yuo can clone this repository.
 You can compile it via command line i.e.: neuralnetwork>javac NeuralNetwork.java
