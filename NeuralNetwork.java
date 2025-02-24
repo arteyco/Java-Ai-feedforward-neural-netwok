@@ -29,37 +29,59 @@ private void initializeWeightsAndBiases() { // Initialize weights with small ran
 for (int i = 0; i < inputSize; i++) {
  for (int j = 0; j < hiddenSize; j++) {
 	weightsInputHidden[i][j] = random.nextGaussian() * 0.1; // Small random values
- 
+System.out.print(weightsInputHidden[i][j] + " value of WIH "); 
 }
+    System.out.println();// New line after each row
  } 
+ System.out.println();// New line after each row
+
 for (int i = 0; i < hiddenSize; i++) { 
-biasHidden[i] = random.nextGaussian() * 0.1; 
+biasHidden[i] = random.nextGaussian() * 0.1;
+    System.out.println("value of bH: " + biasHidden[i]);
 }
+ System.out.println();// New line after each row
+ 
  for (int i = 0; i < hiddenSize; i++) { 
 for (int j = 0; j < outputSize; j++) { weightsHiddenOutput[i][j] = random.nextGaussian() * 0.1; 
+System.out.print(weightsHiddenOutput[i][j] + " value of WHO");
 }
+   System.out.println(); // New line after each row
  }
  for (int i = 0; i < outputSize; i++) {
  biasOutput[i] = random.nextGaussian() * 0.1;
- 
+System.out.print(biasOutput[i] + " value of BO"); 
 }
- }
+    System.out.println();// New line after each row
+   }
  // Sigmoid activation function 
 private double sigmoid(double x) {
- return 1 / (1 + Math.exp(-x)); 
+    double sig = 1 / (1 + Math.exp(-x)); 
+    System.out.println("X : " + x);
+    System.out.println("Sig: " + sig);
+    return 1 / (1 + Math.exp(-x));
+ 
+    
 } 
+
+
 // Forward propagation 
 public double[] predict(double[] input) {
  // Hidden layer 
 double[] hiddenActivations = new double[hiddenSize]; 
 for (int i = 0; i < hiddenSize; i++) {
- double weightedSum = 0; for (int j = 0; j < inputSize; j++) { 
+ double weightedSum = 0;
+
+ for (int j = 0; j < inputSize; j++) { 
 weightedSum += input[j] * weightsInputHidden[j][i];
+    System.out.println("WS: " + weightedSum);
  }
+System.out.println();
  weightedSum += biasHidden[i]; 
 hiddenActivations[i] = sigmoid(weightedSum); 
 // Apply activation function 
+System.out.println("WS2: " + weightedSum);
 }
+    System.out.println();
  // Output layer 
 double[] output = new double[outputSize];
  for (int i = 0; i < outputSize; i++) {
@@ -78,9 +100,9 @@ return output;
      */
 public static void main(String[] args) {
  // Example usage
- NeuralNetwork nn = new NeuralNetwork(3, 4, 2); // 2 inputs, 3 hidden nodes, 1 output 
+ NeuralNetwork nn = new NeuralNetwork(2, 3, 1); // 2 inputs, 3 hidden nodes, 1 output 
 // Sample input
- double[] input = {0.3, 0.8, 0.4
+ double[] input = {0.3, 0.8
 };
  // Make a prediction
  double[] prediction = nn.predict(input);
