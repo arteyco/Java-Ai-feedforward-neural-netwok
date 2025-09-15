@@ -9,5 +9,5 @@ and run it with: neuralnetwork>java NeuralNetwork.java
 you can open it in an IDE like Apache NetBeans.
 I suggets using java8+.
 Enjoy the pleasure of knowledge!.
-https://youtu.be/MlFRSObKjLQ
+[[https://youtu.be/MlFRSObKjLQ](https://www.youtube.com/watch?v=NUIOsk1Y3TE)]
 It is a work in progress. Stay tunning.
